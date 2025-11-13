@@ -13,3 +13,4 @@ Notes:
 - I used an enumeration to represent airports in order to restrict the set of permissible values. However, this approach is not the most readable or user-friendly and could be improved for better clarity and maintainability.
 - Test coverage is limited. In a real production scenario, I would implement integration tests to validate the entire processing pipeline.
 - Db credentials are in plain text in compose as it is a technical test but in production it should be manage using a correct secret management mechanism.
+- Error management could to be improve to log and return specific error code and each error case
