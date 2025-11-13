@@ -1,7 +1,28 @@
 ﻿services:
   travelport.api:
     image: travelport.api
+    depends_on:
+      - postgres
     build:
       context: .
       dockerfile: TravelPort.Api/Dockerfile
-
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: "http://+:8080"
+      # Only for dev period and testing purpose 
+      ConnectionStrings__DefaultConnection: "Host=postgres;Port=5432;Database=travelPortDb;Username=travelPort;Password=password123"
+      ENVIRONMENT: "Development"
+    ports:
+      - "5108:8080"
+  postgres:
+    image: postgres:18.0-alpine
+    environment:
+      POSTGRES_USER: travelPort
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: travelPortDb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+volumes:
+  postgres_data:
