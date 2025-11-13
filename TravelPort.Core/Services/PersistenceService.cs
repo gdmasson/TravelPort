@@ -26,22 +26,20 @@ public class PersistenceService : IPersistenceService
 
     public async Task<bool> UpdateUser(User user)
     {
-        var userEntity = await _context.Users.AsTracking()
-            .FirstOrDefaultAsync(u => u.PassportNumber == user.PassportNumber);
-        if (userEntity == null)
+        if (await _context.Users.FirstOrDefaultAsync(u => u.PassportNumber == user.PassportNumber) == null)
         {
             return false;
         }
-        
-        userEntity.SelectedAirport = user.SelectedAirport;
-        userEntity.Name = user.Name;
-        userEntity.Surname = user.Surname;
-        userEntity.Email = user.Email;
-        userEntity.Address = user.Address;
-        userEntity.PhoneNumber = user.PhoneNumber;
-        
-        _context.Users.Update(user);
-        await _context.SaveChangesAsync();
+
+        await _context.Users
+            .Where(u => u.PassportNumber == user.PassportNumber)
+            .ExecuteUpdateAsync(u => u
+                .SetProperty(p => p.SelectedAirport, user.SelectedAirport)
+                .SetProperty(p => p.Name, user.Name)
+                .SetProperty(p => p.Surname, user.Surname)
+                .SetProperty(p => p.Email, user.Email)
+                .SetProperty(p => p.Address, user.Address)
+                .SetProperty(p => p.PhoneNumber, user.PhoneNumber));
         return true;
     }
 
@@ -52,14 +50,14 @@ public class PersistenceService : IPersistenceService
 
     public async Task<bool> DeleteUser(string passportNumber)
     {
-        var user = await _context.Users.AsTracking().FirstOrDefaultAsync(u => u.PassportNumber == passportNumber);
-        if (user == null)
+        if (await _context.Users.FirstOrDefaultAsync(u => u.PassportNumber == passportNumber) == null)
         {
             return false;
         }
-        
-        _context.Users.Remove(user);
-        await _context.SaveChangesAsync();
+
+        await _context.Users
+            .Where(u => u.PassportNumber == passportNumber)
+            .ExecuteDeleteAsync();
         return true;
     }
 }
