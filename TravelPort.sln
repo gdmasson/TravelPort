@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPort.Api", "TravelPort.Api\TravelPort.Api.csproj", "{940DA849-9D66-4848-9A41-3E89088BA18A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B732E388-DF4E-4E1F-BFAE-9BE83D249D25}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPort.Core", "TravelPort.Core\TravelPort.Core.csproj", "{B1EE8F51-6718-4673-8393-E469E667E481}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPort.UnitTests", "TravelPort.UnitTests\TravelPort.UnitTests.csproj", "{B940C4AA-38B2-4AAE-A426-885C0CFF7263}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{940DA849-9D66-4848-9A41-3E89088BA18A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{940DA849-9D66-4848-9A41-3E89088BA18A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{940DA849-9D66-4848-9A41-3E89088BA18A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{940DA849-9D66-4848-9A41-3E89088BA18A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1EE8F51-6718-4673-8393-E469E667E481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1EE8F51-6718-4673-8393-E469E667E481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1EE8F51-6718-4673-8393-E469E667E481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1EE8F51-6718-4673-8393-E469E667E481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B940C4AA-38B2-4AAE-A426-885C0CFF7263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B940C4AA-38B2-4AAE-A426-885C0CFF7263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B940C4AA-38B2-4AAE-A426-885C0CFF7263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B940C4AA-38B2-4AAE-A426-885C0CFF7263}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

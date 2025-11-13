@@ -1,0 +1,7 @@
+﻿services:
+  travelport.api:
+    image: travelport.api
+    build:
+      context: .
+      dockerfile: TravelPort.Api/Dockerfile
+
