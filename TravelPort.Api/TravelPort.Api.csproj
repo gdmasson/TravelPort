@@ -17,4 +17,8 @@
       <PackageReference Include="Scalar.AspNetCore" Version="2.10.3" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\TravelPort.Core\TravelPort.Core.csproj" />
+    </ItemGroup>
+
 </Project>
